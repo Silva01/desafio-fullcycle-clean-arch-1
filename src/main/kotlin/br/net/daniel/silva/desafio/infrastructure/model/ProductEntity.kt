@@ -2,10 +2,7 @@ package br.net.daniel.silva.desafio.infrastructure.model
 
 import java.math.BigDecimal
 import java.time.LocalDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "PRODUCT")
@@ -13,6 +10,7 @@ open class ProductEntity {
 
     @Id
     @Column(name = "PRODUCT_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     open val id: Int? = null
 
     @Column(name = "PRODUCT_NAME")
