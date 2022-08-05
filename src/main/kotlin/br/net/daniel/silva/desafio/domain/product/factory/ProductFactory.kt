@@ -5,7 +5,8 @@ import br.net.daniel.silva.desafio.domain.product.usecase.CreateProductUserCase
 import br.net.daniel.silva.desafio.domain.product.usecase.FindProductUseCase
 import br.net.daniel.silva.desafio.domain.product.usecase.ListProductUseCase
 import br.net.daniel.silva.desafio.domain.product.usecase.UpdateProductUseCase
-import br.net.daniel.silva.desafio.domain.product.valueobject.ProductDTO
+import br.net.daniel.silva.desafio.domain.product.valueobject.ProductInputDTO
+import br.net.daniel.silva.desafio.domain.product.valueobject.ProductOutputDTO
 
 class ProductFactory(private val repository: ProductRepositoryAdapter) {
 
@@ -14,19 +15,19 @@ class ProductFactory(private val repository: ProductRepositoryAdapter) {
     private var findProductUseCase: FindProductUseCase = FindProductUseCase(repository)
     private var listProductUseCase: ListProductUseCase = ListProductUseCase(repository)
 
-    fun createProductFactory(product: ProductDTO) {
+    fun createProductFactory(product: ProductInputDTO) {
         createProductUserCase.create(product)
     }
 
-    fun updateProductFactory(product: ProductDTO) {
+    fun updateProductFactory(product: ProductInputDTO) {
         updateProductUseCase.update(product)
     }
 
-    fun findProductUseCase(id: Int): ProductDTO {
+    fun findProductUseCase(id: Int): ProductOutputDTO {
         return findProductUseCase.find(id)
     }
 
-    fun listProductUseCase(): MutableList<ProductDTO> {
+    fun listProductUseCase(): MutableList<ProductOutputDTO> {
         return listProductUseCase.list()
     }
 }
