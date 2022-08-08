@@ -3,15 +3,12 @@ package br.net.daniel.silva.desafio.infrastructure.service
 import br.net.daniel.silva.desafio.domain.product.repository.ProductRepositoryAdapter
 import br.net.daniel.silva.desafio.domain.product.valueobject.ProductInputDTO
 import br.net.daniel.silva.desafio.domain.product.valueobject.ProductOutputDTO
-import br.net.daniel.silva.desafio.infrastructure.dto.ProductDTO
 import br.net.daniel.silva.desafio.infrastructure.model.ProductEntity
 import br.net.daniel.silva.desafio.infrastructure.repository.ProductRepository
 import br.net.daniel.silva.desafio.infrastructure.utils.convertEntityToOutput
 import br.net.daniel.silva.desafio.infrastructure.utils.convertInputToEntity
 import org.springframework.stereotype.Service
-import java.util.stream.Collector
 import java.util.stream.Collectors
-import kotlin.streams.toList
 
 @Service
 class ProductService(private val repository: ProductRepository): ProductRepositoryAdapter {
