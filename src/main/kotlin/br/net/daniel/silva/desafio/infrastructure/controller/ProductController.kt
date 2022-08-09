@@ -1,38 +1,28 @@
 package br.net.daniel.silva.desafio.infrastructure.controller
 
+import br.net.daniel.silva.desafio.domain.product.factory.ProductFactory
+import br.net.daniel.silva.desafio.domain.product.valueobject.ProductOutputDTO
+import br.net.daniel.silva.desafio.infrastructure.dto.RequestProductDTO
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseStatus
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/product")
-class ProductController {
+class ProductController(@Autowired private val factory: ProductFactory) {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    fun create() {
-
-    }
+    fun create(@RequestBody productRequest: RequestProductDTO) = factory.createProductFactory(productRequest)
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    fun update() {
-
-    }
+    fun update(@RequestBody productRequest: RequestProductDTO) = factory.updateProductFactory(productRequest)
 
     @GetMapping("/find/{id}")
-    fun find(@PathVariable("id") id: Int): ResponseEntity<String> {
-        return ResponseEntity.ok("Teste find")
-    }
+    fun find(@PathVariable("id") id: Int): ResponseEntity<ProductOutputDTO> = ResponseEntity.ok(factory.findProductUseCase(id))
 
     @GetMapping("/list")
-    fun list(): ResponseEntity<String> {
-        return ResponseEntity.ok("Teste list")
-    }
+    fun list(): ResponseEntity<MutableList<ProductOutputDTO>> = ResponseEntity.ok(factory.listProductUseCase())
 }
