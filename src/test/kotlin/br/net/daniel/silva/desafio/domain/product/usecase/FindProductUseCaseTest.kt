@@ -2,12 +2,12 @@ package br.net.daniel.silva.desafio.domain.product.usecase
 
 import br.net.daniel.silva.desafio.domain.product.repository.ProductRepositoryAdapter
 import br.net.daniel.silva.desafio.utils.generateProductMock
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.*
-import org.junit.jupiter.api.Assertions.*
 import java.math.BigDecimal
-import java.util.*
 
 @Tag("unitTest")
 class FindProductUseCaseTest {
