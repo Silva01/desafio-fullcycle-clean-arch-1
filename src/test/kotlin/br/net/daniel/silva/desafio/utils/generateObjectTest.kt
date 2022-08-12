@@ -7,3 +7,4 @@ import java.time.LocalDateTime
 fun generateListProductMock(): MutableList<ProductOutputDTO> = mutableListOf(generateProductMock())
 
 fun generateProductMock(): ProductOutputDTO = ProductDTOTest(1, "mac", "produto de teste 1", "VENDIDO", LocalDateTime.now(), null, BigDecimal("100"))
+fun generateProducUpdatetMock(updateName: String): ProductOutputDTO = ProductDTOTest(1, updateName, "produto de teste 1", "VENDIDO", LocalDateTime.now(), null, BigDecimal("100"))
