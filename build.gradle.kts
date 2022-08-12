@@ -35,3 +35,17 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+task<Test>("unitTest") {
+    useJUnitPlatform() {
+        excludeTags("integration")
+        includeTags("unitTest")
+    }
+}
+
+task<Test>("integrationTest") {
+    useJUnitPlatform() {
+        includeTags("integration")
+        excludeTags("unitTest")
+    }
+}
