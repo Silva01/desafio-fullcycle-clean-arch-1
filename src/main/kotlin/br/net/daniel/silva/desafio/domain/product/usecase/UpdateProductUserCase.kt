@@ -4,7 +4,7 @@ import br.net.daniel.silva.desafio.domain.product.repository.ProductRepositoryAd
 import br.net.daniel.silva.desafio.domain.product.valueobject.ProductInputDTO
 import java.time.LocalDateTime
 
-internal class UpdateProductUseCase(private val repository: ProductRepositoryAdapter) {
+internal class UpdateProductUserCase(private val repository: ProductRepositoryAdapter) {
     fun update(product: ProductInputDTO) {
         product.modifyDate = LocalDateTime.now()
         repository.update(product)

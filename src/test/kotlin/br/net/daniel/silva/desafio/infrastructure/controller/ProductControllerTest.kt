@@ -62,7 +62,7 @@ internal class ProductControllerTest(@Autowired val testRestTemplate: TestRestTe
             String::class.java)
 
         assertEquals(HttpStatus.OK, result.statusCode)
-        assertEquals("{\"id\":1,\"name\":\"Mac Book Pro\",\"description\":\"Esse é um produto\",\"status\":\"EM_ESTOQUE\",\"price\":1000.00}", result.body)
+        assertEquals("{\"id\":1,\"name\":\"Mac Book Teste\",\"description\":\"Esse é um produto\",\"status\":\"EM_ESTOQUE\",\"price\":1000.00}", result.body)
     }
 
     @Test
@@ -78,6 +78,6 @@ internal class ProductControllerTest(@Autowired val testRestTemplate: TestRestTe
             String::class.java)
 
         assertEquals(HttpStatus.OK, result.statusCode)
-        assertEquals("[{\"id\":1,\"name\":\"Mac Book Pro\",\"description\":\"Esse é um produto\",\"status\":\"EM_ESTOQUE\",\"price\":1000.00}]", result.body)
+        assertEquals("[{\"id\":1,\"name\":\"Mac Book Teste\",\"description\":\"Esse é um produto\",\"status\":\"EM_ESTOQUE\",\"price\":1000.00}]", result.body)
     }
 }

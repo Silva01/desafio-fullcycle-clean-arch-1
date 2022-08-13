@@ -4,7 +4,7 @@ import br.net.daniel.silva.desafio.domain.product.repository.ProductRepositoryAd
 import br.net.daniel.silva.desafio.domain.product.usecase.CreateProductUserCase
 import br.net.daniel.silva.desafio.domain.product.usecase.FindProductUseCase
 import br.net.daniel.silva.desafio.domain.product.usecase.ListProductUseCase
-import br.net.daniel.silva.desafio.domain.product.usecase.UpdateProductUseCase
+import br.net.daniel.silva.desafio.domain.product.usecase.UpdateProductUserCase
 import br.net.daniel.silva.desafio.domain.product.valueobject.ProductInputDTO
 import br.net.daniel.silva.desafio.domain.product.valueobject.ProductOutputDTO
 
@@ -16,7 +16,7 @@ class ProductFactory(private val repository: ProductRepositoryAdapter) {
     }
 
     fun updateProductFactory(product: ProductInputDTO) {
-        val updateProductUseCase = UpdateProductUseCase(repository)
+        val updateProductUseCase = UpdateProductUserCase(repository)
         updateProductUseCase.update(product)
     }
 
