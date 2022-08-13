@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.http.*
@@ -11,9 +12,7 @@ import java.net.URI
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Tag("integration")
-internal class ProductControllerTest {
-
-    var testRestTemplate = TestRestTemplate()
+internal class ProductControllerTest(@Autowired val testRestTemplate: TestRestTemplate) {
 
     @Test
     @Order(1)
