@@ -18,7 +18,5 @@ interface ProductOutputDTO {
     val name: String?
     val description: String?
     val status: String?
-    val createDate: LocalDateTime?
-    val modifyDate: LocalDateTime?
     val price: BigDecimal?
 }

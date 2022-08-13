@@ -18,7 +18,7 @@ class UpdateProductUseCase {
     @Test
     fun deveAtualizarUmRegistro() {
         val responseMock = generateProducUpdatetMock("teste")
-        repository.update(ProductInputDTOTest(responseMock.id, responseMock.name, responseMock.description, responseMock.status, responseMock.createDate, responseMock.modifyDate, responseMock.price))
+        repository.update(ProductInputDTOTest(responseMock.id, responseMock.name, responseMock.description, responseMock.status,null,  null, responseMock.price))
         `when`(repository.find(anyInt())).thenReturn(responseMock)
 
         assertEquals(1, responseMock.id)

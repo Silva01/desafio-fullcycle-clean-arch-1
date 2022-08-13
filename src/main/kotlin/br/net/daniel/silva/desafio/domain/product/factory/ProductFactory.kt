@@ -11,22 +11,22 @@ import br.net.daniel.silva.desafio.domain.product.valueobject.ProductOutputDTO
 class ProductFactory(private val repository: ProductRepositoryAdapter) {
 
     fun createProductFactory(product: ProductInputDTO) {
-        val createProductUserCase: CreateProductUserCase = CreateProductUserCase(repository)
+        val createProductUserCase = CreateProductUserCase(repository)
         createProductUserCase.create(product)
     }
 
     fun updateProductFactory(product: ProductInputDTO) {
-        val updateProductUseCase: UpdateProductUseCase = UpdateProductUseCase(repository)
+        val updateProductUseCase = UpdateProductUseCase(repository)
         updateProductUseCase.update(product)
     }
 
     fun findProductUseCase(id: Int): ProductOutputDTO {
-        val findProductUseCase: FindProductUseCase = FindProductUseCase(repository)
+        val findProductUseCase = FindProductUseCase(repository)
         return findProductUseCase.find(id)
     }
 
     fun listProductUseCase(): MutableList<ProductOutputDTO> {
-        val listProductUseCase: ListProductUseCase = ListProductUseCase(repository)
+        val listProductUseCase = ListProductUseCase(repository)
         return listProductUseCase.list()
     }
 }

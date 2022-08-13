@@ -10,8 +10,6 @@ class ProductDTOTest(
     override val name: String?,
     override val description: String?,
     override val status: String?,
-    override val createDate: LocalDateTime?,
-    override val modifyDate: LocalDateTime?,
     override val price: BigDecimal?
 ) : ProductOutputDTO
 

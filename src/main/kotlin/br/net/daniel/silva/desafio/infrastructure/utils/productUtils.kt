@@ -21,7 +21,5 @@ fun convertEntityToOutput(productEntity: ProductEntity): ProductOutputDTO = Prod
     productEntity.name,
     productEntity.description,
     productEntity.status,
-    productEntity.createDate,
-    productEntity.modifyDate,
     productEntity.price
 )
